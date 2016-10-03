@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title>Flask City - {{ title }}</title>
-    {% else %}
-    <title>Flask City - no flasks here</title>
-    {% endif %}
-  </head>
-  <body>
-    <h1> {{ user.nickname }}: this is your city.</h1>
-    {% for post in posts %}
-    <div>
-      <p>
-        {{ post.author.nickname }} says: <b>{{ post.body }}</b>
-      </p>
-    </div>
-    {% endfor %}
-  </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+  <h1> {{ user.nickname }}: this is your city.</h1>
+  {% for post in posts %}
+  <div>
+    <p>
+      {{ post.author.nickname }} says: <b>{{ post.body }}</b>
+    </p>
+  </div>
+  {% endfor %}
+{% endblock %}
